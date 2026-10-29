@@ -1,5 +1,10 @@
 pipeline {
     agent { label 'student-laptop' }
+
+    triggers {
+        pollSCM('* * * * *')
+    }
+
     options {
         skipDefaultCheckout(true)
         disableConcurrentBuilds()
@@ -93,3 +98,5 @@ pipeline {
         }
     }
 }
+
+
